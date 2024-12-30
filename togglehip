@@ -1,0 +1,26 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Create ScreenGui and Button
+local screenGui = Instance.new("ScreenGui")
+local button = Instance.new("TextButton")
+
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+button.Parent = screenGui
+button.Size = UDim2.new(0, 100, 0, 50) -- Button size
+button.Position = UDim2.new(0.8, -800, 0, 10) -- Button position
+button.Text = "Toggle HipHeight"
+button.BackgroundColor3 = Color3.new(0.5, 0.5, 1)
+
+-- Variables to toggle HipHeight
+local toggleState = false
+local hipHeight1 = 3.5
+local hipHeight2 = 3.4
+
+-- Button click event
+button.MouseButton1Click:Connect(function()
+    toggleState = not toggleState
+    humanoid.HipHeight = toggleState and hipHeight1 or hipHeight2
+end)
