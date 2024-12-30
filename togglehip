@@ -17,7 +17,7 @@ button.BackgroundColor3 = Color3.new(0.5, 0.5, 1)
 -- Variables to toggle HipHeight
 local toggleState = false
 local hipHeight1 = 3.5
-local hipHeight2 = 3.4
+local hipHeight2 = 3.435
 
 -- Button click event
 button.MouseButton1Click:Connect(function()
